@@ -24,7 +24,7 @@
             padding: 20px;
         }
 
-        /* Header Styles */
+    
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
@@ -334,32 +334,5 @@
             </div>
         </div>
     </section>
-
-    <!-- Include previous skills, projects, and achievements sections here -->
-
-    <script>
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                }
-            });
-        });
-
-        document.querySelectorAll('.education-card, .skill-box, .project-card').forEach((element) => {
-            observer.observe(element);
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
