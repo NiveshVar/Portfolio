@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivesh Varun - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        .header-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: slideInLeft 1s ease;
+        }
+
+        .about-points {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about-points li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .about-points li::before {
+            content: "✓";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Skills Section */
+
+
+        /* Education Section */
+        .education-section {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        /* Skills Section */
+.skills-section {
+    padding: 80px 0;
+}
+
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.skill-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item {
+    margin: 25px 0;
+}
+
+.skill-name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #ecf0f1;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    width: 0;
+    border-radius: 6px;
+    transition: width 1s ease-in-out;
+}
+
+/* Percentage Labels */
+.skill-percent {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-left: 10px;
+}
+
+/* Animation */
+@keyframes progressAnimation {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+
+        
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5em;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="https://i.ibb.co/rKXvMvFb/image.jpg" alt="Nivesh Varun" class="profile-img">
+            <h1>Nivesh Varun</h1>
+            <p>IT Student at PSNA College</p>
+            <div class="contact-info">
+                <a href="tel:+91 6381258838" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    +91 6381258838
+                </a>
+                <a href="mailto:niveshvarun0@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    niveshvarun0.com
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Dindigul, Tamil Nadu
+                </div>
+            </div>
+            <div class="social-links" style="margin-top: 20px;">
+                <a href="https://github.com/NiveshVar" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/nivesh-varun-a8b56327b/" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+            
+        </div>
+    </header>
+    
+    <section class="skills-section container">
+        <h2>Technical Skills</h2>
+        <div class="skill-box">
+            <div class="skill-item">
+                <div class="skill-name">Python</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">SQL</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">C Programming</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Java</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>A passionate IT student with strong problem-solving skills and a fast learner. Currently pursuing my second year of Information Technology at PSNA College of Engineering and Technology.</p>
+                    <ul class="about-points">
+                        <li>Fast learner with ability to grasp new concepts quickly</li>
+                        <li>Highly adaptable to changing environments</li>
+                        <li>Strong team player with good communication skills</li>
+                        <li>Always curious about new technologies</li>
+                        <li>Detail-oriented with good time management</li>
+                    </ul>
+                </div>
+                <div class="education-section">
+                    <div class="education-card">
+                        <h3>Education</h3>
+                        <p>🏫 Achyuta Public School</p>
+                        <p>📅 2023 Passout</p>
+                        <p>📍 Dindigul, Tamil Nadu</p>
+                    </div>
+                    <div class="education-card">
+                        <h3>Languages</h3>
+                        <p>🗣️ Tamil (Native)</p>
+                        <p>🌍 English (Professional)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include previous skills, projects, and achievements sections here -->
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.education-card, .skill-box, .project-card').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
